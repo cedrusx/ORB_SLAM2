@@ -26,6 +26,9 @@
 #include<iomanip>
 
 #include<opencv2/core/core.hpp>
+#if (CV_VERSION_MAJOR == 4)
+#include<opencv2/imgcodecs/legacy/constants_c.h>
+#endif
 
 #include"System.h"
 
@@ -119,7 +122,7 @@ int main(int argc, char **argv)
     cout << "mean tracking time: " << totaltime/nImages << endl;
 
     // Save camera trajectory
-    SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");    
+    SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
 
     return 0;
 }

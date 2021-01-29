@@ -26,6 +26,9 @@
 #include<chrono>
 
 #include<opencv2/core/core.hpp>
+#if (CV_VERSION_MAJOR == 4)
+#include<opencv2/imgcodecs/legacy/constants_c.h>
+#endif
 
 #include<System.h>
 
@@ -59,7 +62,7 @@ int main(int argc, char **argv)
 
     cout << endl << "-------" << endl;
     cout << "Start processing sequence ..." << endl;
-    cout << "Images in the sequence: " << nImages << endl << endl;   
+    cout << "Images in the sequence: " << nImages << endl << endl;
 
     // Main loop
     cv::Mat imLeft, imRight;
