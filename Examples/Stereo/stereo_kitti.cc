@@ -26,7 +26,9 @@
 #include<chrono>
 
 #include<opencv2/core/core.hpp>
-#include<opencv2/core/core_c.h>
+#if (CV_VERSION_MAJOR == 4)
+#include<opencv2/imgcodecs/legacy/constants_c.h>
+#endif
 
 #include<System.h>
 
